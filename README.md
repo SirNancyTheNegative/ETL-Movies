@@ -33,3 +33,10 @@ kaggle_metadata = kaggle_metadata[kaggle_metadata['adult'] == 'False'].drop('adu
 ```
 
 Similarly, we can format and drop columns to whittle down what we don't need in order to focus on what we want.
+
+### Transforming the Data
+
+
+
+### Loading the Data
+
