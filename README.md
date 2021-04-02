@@ -32,7 +32,15 @@ After the extraction process is complete, next comes Transformation, the step wh
 kaggle_metadata = kaggle_metadata[kaggle_metadata['adult'] == 'False'].drop('adult',axis='columns')
 ```
 
-Similarly, we can format and drop columns to whittle down what we don't need in order to focus on what we want.
+Similarly, we can format and drop columns to whittle down what we don't need in order to focus on what we want, and have it be able to be used in calculations. For example, the 'video', 'budget', 'id', 'popularity' and 'release date' columns all have incorrect data types. To remedy this, we write the following code:
+```
+    kaggle_metadata['video'] = kaggle_metadata['video'] == 'True'
+    kaggle_metadata['budget'] = kaggle_metadata['budget'].astype(int)
+    kaggle_metadata['id'] = pd.to_numeric(kaggle_metadata['id'], errors='raise')
+    kaggle_metadata['popularity'] = pd.to_numeric(kaggle_metadata['popularity'], errors='raise')
+    kaggle_metadata['release_date'] = pd.to_datetime(kaggle_metadata['release_date'])
+```
+Since just about everything was read in as a string, it's important to make sure that any kind of analysis we could do to this data can be done. Even though we're only looking to compile movie data, whatever this data will be used for in the future
 
 ### Transforming the Data
 
