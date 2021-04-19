@@ -42,10 +42,8 @@ Similarly, we can format and drop columns to whittle down what we don't need in 
 ```
 Since just about everything was read in as a string, it's important to make sure that any kind of analysis we could do to this data can be done. Even though we're only looking to compile movie data, whatever this data will be used for in the future, it will be important that it's as clean and painless as possible.
 
-### Transforming the Data
+### Transforming and Loading Data
 
-Now that the data is cleaned and error-free, it's time to merge the data. Looking through both the Wikipedia data and the Kaggle data, we have at least one column where the data 
+Now that the data is cleaned and error-free, it's time to merge the data. Looking through both the Wikipedia data and the Kaggle data, we have at least one column that exists in both DataFrames, and the one that's got the best rate of matching is the "imdb_id" column. 
 
-
-### Loading the Data
 
