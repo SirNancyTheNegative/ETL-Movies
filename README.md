@@ -44,6 +44,8 @@ Since just about everything was read in as a string, it's important to make sure
 
 ### Transforming and Loading Data
 
-Now that the data is cleaned and error-free, it's time to merge the data. Looking through both the Wikipedia data and the Kaggle data, we have at least one column that exists in both DataFrames, and the one that's got the best rate of matching is the "imdb_id" column. 
+Now that the data is cleaned and error-free, it's time to merge the data. Looking through both the Wikipedia data and the Kaggle data, we have at least one column that exists in both DataFrames, and the one that's got the best rate of matching is the "imdb_id" column. From this point, we can get rid of unnecessary data by replacing missing data with data that exists in the merged DataFrame as a similarly-named column, deleting unnecessary columns that have the exact same data as others, and renaming columns to be a bit more concise.
+
+After this, we can move to the last step: Loading the data into a database. We can do so from within a Jupyter Notebook using a built-in DataFrame function named `.to_sql()`. Given the string containing an address to a database, we can use the DataFrame to create a new database so long as we have the appropriate credentials.
 
 
